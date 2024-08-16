@@ -1,10 +1,12 @@
 import entities.User;
 import exceptions.StringNotValidException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 
 public class Main {
-
+    private static Logger logger = LoggerFactory.getLogger(Main.class);
 
     public static void main(String[] args) {
         //   print("Hello world!");
@@ -84,6 +86,9 @@ public class Main {
         } finally { // Serve per far eseguire un determinato codice sia se siamo finiti nel try oppure nel catch
             scanner.close();
         }
+
+        logger.info("Ciao da Logger");
+        logger.error("ciao sono un errore!");
     }
 
 }
